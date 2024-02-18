@@ -69,3 +69,13 @@ let min = Math.min(a,d,e); // mendapatkan sebuah nilai min berdasarkan nilai 45,
 
 
 
+/*------------------------------------Random Number Generation-------------------------------*/
+// bilangan bulat yang diacak mencapai 0-5  (Math.random() * 6)
+// tapi jika ingin mencapai 0-6 maka tambahkan + 1 (Math.random() * 6 + 1) 
+// const minimum = 50;
+// const maximum = 100;
+
+// let rendomNum = Math.round(Math.random() * (maximum - minimum)) + minimum; 
+
+
+
