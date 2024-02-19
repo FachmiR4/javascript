@@ -96,3 +96,28 @@ phoneNumber = phoneNumber.replaceAll('-', ".") // melakukan perubahan pada chara
 // }else{
 //     console.log(userName)
 // }
+
+/*------------------------------------String slicing---------------------------------------*/
+
+// string slicing = creating a substring 
+//                  from a portion of onother string
+
+//                  string.slice(start, end);
+
+const fullName = "Fachmi Ramadhan";
+const email = "fachmi123@gmail.com";
+
+// let firstName = fullName.slice(0,6);
+// let lastNama = fullName.slice(7, 15);
+
+let firstChar = fullName.slice(0,1);
+let lastChar = fullName.slice(-8);
+
+let firstName = fullName.slice(0, fullName.indexOf(" "));
+let lastNama = fullName.slice(fullName.indexOf(" ")+1)
+
+let userNama = email.slice(0, email.indexOf("@"));
+let extention = email.slice(email.indexOf('@') + 1);
+
+console.log(userNama);
+console.log(extention);
