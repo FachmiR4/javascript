@@ -26,3 +26,22 @@ while(!loggedIn){
         console.log("invalid credentials! please try again");
     }
 }
+
+
+
+/*------------------------------------For Loop---------------------------------------*/
+// for loop = repeat some code a limited amount of times
+
+// for(let i = 10; i > 0; i-=2){
+//     console.log(i);
+// }
+
+for(let i = 0; i <= 20; i++){
+    if(i == 13){
+        continue;
+    }else if(i == 17){
+        break;
+    }else{
+        console.log(i);
+    }
+}
