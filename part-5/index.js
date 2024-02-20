@@ -72,6 +72,8 @@ const foo = {
     korean: 'annyeong'
   };
   
+// console.log(baz);
+
   function calcVolume(width, height, depth) {
     return width * height * depth;
   };
@@ -80,5 +82,62 @@ const foo = {
   
   // Passing arguments to the function from a variable:
   const cube = [12, 30, 14];
-  console.log(calcVolume.apply(null, cube));  // using "apply"
-  console.log(calcVolume(...cube));     // using "spread operator"
+//   console.log(calcVolume.apply(null, cube));  // using "apply"
+//   console.log(calcVolume(...cube));     // using "spread operator"
+
+
+/*-----------------------------------Rest parameters------------------------------------------*/
+//  rest parameters = (...rest) allow a function work with a variable number of arguments
+//                    by bundling them into an array
+
+//                    spread = expands an array into seperate elements
+//                    rest = bundles seperate elements into an array
+
+
+function openFrige(...foods){ // spread operator
+    // console.log(foods);
+    console.log(...foods)
+}
+function getFood(...foods){
+    return foods;
+}
+
+
+const food1 = "humburger";
+const food2 = "pizza";
+const food3 = "hotdog";
+const food4 = "ramen";
+const food5 = "sushi";
+
+// openFrige(food1, food2, food3, food4, food5);
+
+const foodFast = getFood(food1, food2, food3, food4, food5);
+
+// console.log(foodFast)
+
+function sum(...numbers){
+    let result = 0
+    for(let number of numbers){
+        result += number;
+    }
+    return result;
+}
+function getEverage(...numbers){
+    let result = 0
+    for(let number of numbers){
+        result += number;
+    }
+    return result / numbers.length;
+}
+function combineStrings(...strings){
+    return strings.join(" ");
+}
+
+const total = sum(1,2,3,4,5,6,7,8,9,10);
+const total1 = getEverage(1,2,3,4,5,6,7,8,9,10);
+const fullName = combineStrings("Mr.", "Fachmi", "Ramadhan");
+
+// console.log(fullName);
+// console.log(total1);
+// console.log(`your total is $${total}`);
+
