@@ -77,7 +77,7 @@ setTimeout(function(){
 
 console.log(cubes);
 
-/*-----------------------------------arrow function------------------------------------------*/
+/*----------------------------------arrow function------------------------------------------*/
 //  arrow function = a concise way to write function expressions 
 //                  good for simple functions that you use only once
 //                  (parameters) => some code
@@ -89,3 +89,39 @@ const greet = (nama) => {console.log(`Hello ${nama}`)
                          console.log("what's up!")}
 hello();
 greet("fachmi");
+
+
+/*----------------------------------Object------------------------------------------*/
+// objeck = a collection of related properties and/or methods 
+//          can represent real world objects (people, products, places)
+//          object = {key : value,
+//                     function()}
+
+const person1 = {
+        firstName: "fachmi",
+        lastName: "Ramadhan",
+        age: 30,
+        isEmployed: true,
+        sayHello: function(){console.log(`Hi, i am Fachmi Ramadhan`)},
+
+}
+const person2 = {
+    firstName: "dodon",
+    lastName: "supradi",
+    age: 30,
+    isEmployed: true,
+    sayHello: () => {console.log(`Hi, i am Dodon Supradi`)},
+}
+
+console.log(person1.firstName);
+console.log(person1.lastName);
+console.log(person1.age);
+console.log(person1.isEmployed);
+person1.sayHello();
+
+
+console.log(person2.firstName);
+console.log(person2.lastName);
+console.log(person2.age);
+console.log(person2.isEmployed);
+person2.sayHello();
