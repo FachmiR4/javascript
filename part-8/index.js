@@ -110,5 +110,54 @@ const user1 = new User("fachmi");
 
 // console.log(user1.username);
 // console.log(User.userCount);
-console.log(user1.sayHeloo());
-User.getUserCount();
+// console.log(user1.sayHeloo());
+// User.getUserCount();
+
+
+/*-----------------------------------inheritence------------------------------------------*/
+//  inheritence = allows a new class to inherit properties and methods from
+//                an existing class (parent -> child)
+//                helps with code reusability
+
+class animal{
+    alive = true;
+
+    eat(){
+        console.log(`This ${this.name} is eating`);
+    }
+    sleep(){
+        console.log(`This ${this.name} is sleeping`);
+    }
+}
+
+class rabbit extends animal{
+    name = "rabbit";
+
+    run(){
+        console.log(`This ${this.name} is running`);
+    }
+}
+class fish extends animal{
+    name = "fish";
+
+    swim(){
+        console.log(`This ${this.name} is swimming`);
+    }
+}
+class hawk extends animal{
+    name = "hawk";
+
+    fly(){
+        console.log(`This ${this.name} is flying`);
+    }
+}
+
+
+const Rabbit = new rabbit();
+const Fish = new fish();
+const Hawk = new hawk();
+
+console.log(Fish.alive);
+Fish.eat();
+Fish.sleep();
+Fish.swim()
