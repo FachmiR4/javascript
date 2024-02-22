@@ -107,3 +107,53 @@ function formatDate(element){
     const parts = element.split("-");
     return `${parts[1]}/${parts[2]}/${parts[0]}`;
 }
+
+
+/*-----------------------------------filter Array------------------------------------------*/
+// .filter() = creates a new array by filtering 
+//             out elements
+
+// const num = [1,2,3,4,5,6];
+// num.filter((element) =>{
+//     console.log(element % 2 !== 0);
+// });
+
+// const evenNums = num.filter(isEven);
+// const oddNums = num.filter(isOdd); 
+// console.log(oddNums);
+
+// function isEven(element){
+//     return element % 2 === 0;
+// }
+// function isOdd(element){
+//     return element % 2 !== 0;
+// }
+
+const age = [12,13,14,15,16,17,18,19,20,21,22,23,24,25];
+const adults = age.filter(isAdult);
+const childs = age.filter(isChild);
+
+console.log(childs);
+
+function isAdult(element){
+    return element >= 18;
+}
+function isChild(element){
+    return element < 18;
+}
+
+const words = ["apple", "orange", "banana", "kiwi",
+                "pomegranate", "coconut"];
+
+const shortWords = words.filter(getShortWord);
+const logWords = words.filter(getLogWord);
+
+console.log(shortWords);
+console.log(logWords);
+
+function getShortWord(element){
+    return element.length <= 6;
+}
+function getLogWord(element){
+    return element.length > 6;
+}
