@@ -37,7 +37,7 @@ function displayPage(result){
 
 /*-----------------------------------ForEach------------------------------------------*/
 
-// forEach() = metrhod use to iterate over the element
+// forEach() = methods use to iterate over the element
 //             of an array and apply a specified function (callback)
 //             to each element
 
@@ -78,4 +78,32 @@ function capitalize(element, index, array){
 }
 function display1(element){
     console.log(element)
+}
+
+/*-----------------------------------Map methods------------------------------------------*/
+
+// .map() = accepts a callback and applies thet function 
+//         to each element of an array, than return a new array
+
+// const array = [1,2,3,4,5,6];
+// const squeres = array.map(squers);
+// const cubes = array.map(cubs);
+
+// console.log(cubes);
+
+// function squers(element){
+//     return Math.pow(element,2);
+// }
+// function cubs(element){
+//     return Math.pow(element,3);
+// }
+
+const dates = ["2024-02-01", "2024-05-30", "2024-11-27"];
+const formatedDates = dates.map(formatDate);
+
+console.log(formatedDates);
+
+function formatDate(element){
+    const parts = element.split("-");
+    return `${parts[1]}/${parts[2]}/${parts[0]}`;
 }
