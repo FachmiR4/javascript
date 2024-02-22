@@ -45,3 +45,26 @@ const reduces = myArray.reduce((accumulator, elements) => {
 }, initialValue);
 
 console.log(reduces);
+
+/*-----------------------------------function expressions------------------------------------------*/
+//  function declaration = define a reusable block of code 
+//                         that performs a specifict taks.
+const numbers = [1,2,3,4,5,6];
+const num = numbers.map(number);
+
+console.log(num);
+function number(elements){
+    return elements;
+}
+
+//  function expressions = a way to define function as 
+//                          value or variables
+
+const squers = numbers.map(function(elements){
+    return Math.pow(elements, 2);
+});
+const cubes = numbers.map(function(elements){
+    return Math.pow(elements, 3);
+})
+
+console.log(cubes);
