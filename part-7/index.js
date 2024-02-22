@@ -60,11 +60,32 @@ function number(elements){
 //  function expressions = a way to define function as 
 //                          value or variables
 
+//  1. callback in asynchronous operation
+//  2. higher-order functions
+//  3. clousures
+//  4. event listeners
+
 const squers = numbers.map(function(elements){
     return Math.pow(elements, 2);
 });
 const cubes = numbers.map(function(elements){
     return Math.pow(elements, 3);
 })
+setTimeout(function(){
+    console.log("hello");
+}, 5000);
 
 console.log(cubes);
+
+/*-----------------------------------arrow function------------------------------------------*/
+//  arrow function = a concise way to write function expressions 
+//                  good for simple functions that you use only once
+//                  (parameters) => some code
+
+const hello = function(){
+    console.log("hello, how are you!");
+}
+const greet = (nama) => {console.log(`Hello ${nama}`)
+                         console.log("what's up!")}
+hello();
+greet("fachmi");
