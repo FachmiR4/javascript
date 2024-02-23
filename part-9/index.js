@@ -142,4 +142,73 @@ class Person{
 
 const person = new Person("fachmi", "Ramadhan", 23);
 
-console.log(person.fullName);
+// console.log(person.fullName);
+
+/*-----------------------------------destructuring------------------------------------------*/
+
+// destructuring = extract value from array and object, then assign them to
+//                 variables in a convenient way
+//                 [] = to perform array destructuring
+//                 {} = to perform object destructuring
+//                 5 exemples
+
+
+// ----------------- EXAMPLE 1 --------------
+
+let a = 1;
+let b = 2;
+
+[a, b] = [b, a];
+
+// console.log(a); //  output = 2
+// console.log(b); // output = 1
+
+// ----------------- EXAMPLE 2 --------------
+// SWAPP 2 ELEMENTS IN ARRAY
+
+const colors = ["RED", "GREEN", "BLUE", "BLACK", "WHITE"]; 
+
+[colors[0], colors[4]] = [colors[4], colors[0]];
+
+// output = [ "WHITE", "GREEN",  "BLUE", "BLACK", "RED"]
+console.log(colors)
+
+// ----------------- EXAMPLE 3 --------------
+// ASSIGN ARRAY ELEMENTS TO VARIABLES
+
+const [firstColor, secondColor, trirdColor, ...extraColor] = colors;
+
+console.log(firstColor); // output = white
+console.log(secondColor); // output = green
+console.log(trirdColor); // output = blue
+console.log(extraColor); // output = ["black", "red"]
+
+
+// ----------------- EXAMPLE 4 --------------
+// EXTRA VALUES FROM OBJECT
+
+const person1 = {
+    firstName: "Fachmi",
+    lastName: "Ramadhan",
+    age: 30,
+    // job: "fry Cook",
+}
+const {firstName, lastName, age, job="sofware Developer"} = person1;
+
+console.log(firstName); // output = fachmi
+console.log(lastName); // output = Ramadhan
+console.log(age); // output = 30
+console.log(job); // output = Sofware Developer
+
+
+// ----------------- EXAMPLE 4 --------------
+// DESTRUCTURE IN FANCTION PARAMETER
+
+function displayPerson({firstName, lastName, age, job}){
+    console.log(`name: ${firstName} ${lastName}`);
+    console.log(`age: ${age}`);
+    console.log(`job: ${job}`);
+}
+
+displayPerson(person1);
+
