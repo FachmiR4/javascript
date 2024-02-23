@@ -105,4 +105,23 @@ const people = [{name: "SpongeBob", age: 38, gpa: 3.0},
 // people.sort((a, b) => b.age - a.age); // output = mengurutkan age dari tertua ke muda
 people.sort((a, b) => a.name.localeCompare(b.name)); // output = susai alphabet awal
 
-console.log(people)
+// console.log(people)
+
+/*-----------------------------------Shuffle an array------------------------------------------*/
+// Fisher-Yates algorithm
+
+const cards = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"];
+
+// cards.sort(() => Math.random() - 0.5);
+
+Shuffle(cards);
+
+console.log(cards);
+
+function Shuffle(array){
+    for(let i = cards.length-1; i > 0; i--){
+        const random = Math.floor(Math.random() * (i + 1));
+
+        [array[i], array[random]] = [array[random], array[i]]
+    }
+}
