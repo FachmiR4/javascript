@@ -27,4 +27,27 @@ const game = createGame();
 game.increaseScore(6);
 game.decreaseScore(2);
 game.increaseScore(7);
-console.log(`The final score is ${game.getScore()}pts`)
+console.log(`The final score is ${game.getScore()}pts`);
+
+/*-----------------------------------setTimeout------------------------------------------*/
+// setTimeout() = function in javascript that allows you to schedule 
+//                the execution of function after an amount of time (millisecond)
+//                Times are approximate (varies based on the workload of the javascript runtime env.)
+
+//                setTimeout(callback, delay);
+//                clearTimeout(timeoutId) = can cancel a timeout before it triggers
+
+// const timeoutId = setTimeout(() => window.alert("hello"), 7000);
+
+// clearTimeout(timeoutId);
+
+let timeoutId;
+
+function startTimer(){
+    timeoutId = setTimeout(() => window.alert("heloo, fachmi"), 3000);
+    console.log("Started");
+}
+function clearTimer(){
+    clearTimeout(timeoutId);
+    console.log("cleared");
+}
