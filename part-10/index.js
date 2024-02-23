@@ -79,5 +79,30 @@ const minFruit = fruits.reduce((min, fruit) =>
                                 fruit.calories < min.calories ?
                                 fruit : min);
                                 
-console.log(maxFruit);
-console.log(minFruit);
+// console.log(maxFruit);
+// console.log(minFruit);
+
+
+/*-----------------------------------Sortting------------------------------------------*/
+// sort() = method use to sort element of an array in place.
+//          Sorts elements as strings in lexicograpic order, not alphabetical
+//          lexicographic = (alphabet + numbers + symbols) as strings
+
+const animals = ["cat", "rabbit", "chiken", "pig", "fish"];
+const number = [1, 10, 7, 2, 4, 3, 5, 6, 7, 9, 8];
+
+number.sort((a, b) => b - a);
+animals.sort();
+
+// console.log(animals);
+// console.log(number);
+
+const people = [{name: "SpongeBob", age: 38, gpa: 3.0},
+                {name: "Patrick", age: 37, gpa: 1.5},
+                {name: "Squidward", age: 51, gpa: 2.5},
+                {name: "Sandy", age: 27, gpa: 4.0}];
+
+// people.sort((a, b) => b.age - a.age); // output = mengurutkan age dari tertua ke muda
+people.sort((a, b) => a.name.localeCompare(b.name)); // output = susai alphabet awal
+
+console.log(people)
