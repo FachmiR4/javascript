@@ -51,3 +51,22 @@ function clearTimer(){
     clearTimeout(timeoutId);
     console.log("cleared");
 }
+
+/*-----------------------------------ES6 Module------------------------------------------*/
+// ES6 Module = an external file that contains reusable code
+//              that can be imported into other javascript files.
+//              Write reusable code for many different apps.
+//              Can contain variable, classes, function, ... and more
+//              introduced as part of ECMAScript 2015 update
+
+import {PI, getCircumference, getArea, getVolume} from './mathUtil.js';
+
+
+console.log(PI);
+const circumference = getCircumference(10);
+const area = getArea(15);
+const volume = getVolume(11);
+
+console.log(`${circumference.toFixed(2)}cm`);
+console.log(`${area.toFixed(2)}cm^2`);
+console.log(`${volume.toFixed(2)}cm^3`);
