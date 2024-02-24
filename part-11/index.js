@@ -70,3 +70,25 @@ const volume = getVolume(11);
 console.log(`${circumference.toFixed(2)}cm`);
 console.log(`${area.toFixed(2)}cm^2`);
 console.log(`${volume.toFixed(2)}cm^3`);
+
+
+/*-----------------------------------Asynchronous Code------------------------------------------*/
+// synchronous = executes line by line consecutively in a sequential manner
+//               code that waits for an operation to complete.
+
+// synchronous = allows multiple oprations to be performed concurrently without waiting
+//               dosen't block the execution flow and allows the program to continue
+//               (I/O oprations, network request, fething data)
+//               handled with: callback, promises, Async/Await
+
+function func1(panggilan){
+    setTimeout(() => {console.log("Taks 1");
+    panggilan()}, 3000);
+}
+function func2(){
+    console.log("Taks 2");
+    console.log("Taks 3");
+    console.log("Taks 4");
+}
+
+func1(func2);
