@@ -52,3 +52,49 @@ Array.from(foods).forEach(food => {
 })
 
  */
+
+/*-----------------------------------DOM Navigation------------------------------------------*/
+
+// DOM Navigation = the process of navigation through the structure 
+//                  of an HTML document using javascript
+
+// .firstElementChild
+// .lastElementChild
+// .nextElementSibling
+// .previousElementsSibling
+// .parentElement
+// .children
+
+// -------------- .firstElementChild ---------------
+// const firsElements = document.querySelectorAll("ul");
+// firsElements.forEach(firstElemen => {
+//     const ulElement = firstElemen.firstElementChild;
+//     ulElement.style.backgroundColor = "yellow";
+// }) 
+
+// -------------- .lastElementChild ---------------
+// const lastElements = document.querySelectorAll("ul");
+// lastElements.forEach(lastElemen => {
+//     const ulElement = lastElemen.lastElementChild;
+//     ulElement.style.backgroundColor = "yellow";
+// }) 
+
+// -------------- .nextElementSibling ---------------
+// const element = document.getElementById("Vegetable");
+// const nextElement = element.nextElementSibling;
+// nextElement.style.backgroundColor = "yellow";
+
+// -------------- .previousElementSibling ---------------
+// const element = document.getElementById("Orange");
+// const previousElement = element.previousElementSibling;
+// previousElement.style.backgroundColor = "yellow";
+
+// -------------- .parentElement ---------------
+// const element = document.getElementById("Onions");
+// const parentElement = element.parentElement;
+// parentElement.style.backgroundColor = "yellow";
+
+// -------------- .children ---------------
+// const element = document.getElementById("fruits");
+// const childrenElement = element.children;
+// childrenElement[1].style.backgroundColor = "yellow";
