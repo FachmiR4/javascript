@@ -123,20 +123,38 @@ finally{
 
 */
 
-try{
-    const dividend = Number(window.prompt("Enter a dividend: "));
-    const divisor = Number(window.prompt("Enter a divisor: "));
+// try{
+//     // const dividend = Number(window.prompt("Enter a dividend: "));
+//     // const divisor = Number(window.prompt("Enter a divisor: "));
     
-    if(divisor === 0){
-        throw new Error("you can't divide by zero");
-    }
-    if(isNaN(dividend) || isNaN(divisor)){
-        throw new Error("Value must be a number")
-    }
+//     if(divisor === 0){
+//         throw new Error("you can't divide by zero");
+//     }
+//     if(isNaN(dividend) || isNaN(divisor)){
+//         throw new Error("Value must be a number")
+//     }
 
-    const result = dividend / divisor;
-    console.log(result);
-}
-catch(error){
-    console.error(error);
-}
+//     const result = dividend / divisor;
+//     console.log(result);
+// }
+// catch(error){
+//     console.error(error);
+// }
+
+/*-----------------------------------DOM------------------------------------------*/
+
+// DOM = DOCUMENT OBJECT MODEL
+//       Object{} that represents the page you see in the web browser and 
+//       provides you with an API to intract with it.
+//       Web browser constructs the DOM when it loads an HTML document, 
+//       and structures all the elements in a tree-like representation
+//       Javascript can acces the DOM to dynamically
+//       change the content, structure, and style of a web page.
+
+// console.dir(document);
+// document.title = "ini saya ganti"
+
+const username = "fachmi ramadhan";
+const welcomMsg = document.getElementById("welcome-msg");
+
+welcomMsg.textContent += username === "" ? "Guys" : username;
