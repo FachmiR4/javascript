@@ -4,6 +4,7 @@
 
 const myBox = document.getElementById("myBox");
 const myButton = document.getElementById("myButton");
+let clickActive = false;
 
 // myBox.addEventListener("click", event => {
 //     event.target.style.backgroundColor = "tomato";
@@ -18,15 +19,29 @@ const myButton = document.getElementById("myButton");
 //     event.target.textContent = "Click Me 😄";
 // })
 
-myButton.addEventListener("click", () => {
-    myBox.style.backgroundColor = "tomato";
-    myBox.textContent = "OUCH! 😒";
-});
 myButton.addEventListener("mouseover", () => {
-    myBox.style.backgroundColor = "yellow";
-    myBox.textContent = "Don't do it! 😢";
+    if(!clickActive){
+        myBox.style.backgroundColor = "yellow";
+        myBox.textContent = "Don't do it! 😢";
+        clickActive = false;
+    }
 })
 myButton.addEventListener("mouseout", () => {
-    myBox.style.backgroundColor = "lightgreen";
-    myBox.textContent = "Click Me 😄";
+    if(!clickActive){
+        myBox.style.backgroundColor = "lightgreen";
+        myBox.textContent = "Click Me 😄";
+        clickActive = false;
+    }
 })
+myButton.addEventListener("click", () => {
+    if(!clickActive){
+        myBox.style.backgroundColor = "tomato";
+        myBox.textContent = "OUCH! 😒";
+        clickActive = true;
+    }
+    else if(clickActive){
+        myBox.style.backgroundColor = "lightgreen";
+        myBox.textContent = "Click Me 😄";
+        clickActive = false;
+    }
+});
