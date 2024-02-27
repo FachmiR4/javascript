@@ -72,32 +72,77 @@
 //     }
 // })
 
-const myButton = document.querySelectorAll(".myButton");
+// const myButton = document.querySelectorAll(".myButton");
 
-myButton.forEach(button => {
-    button.classList.add("enabled");
-    console.log(button);
+// myButton.forEach(button => {
+//     button.classList.add("enabled");
+//     console.log(button);
+// });
+
+
+// myButton.forEach(button => {
+//     button.addEventListener("mouseover", event => {
+//         event.target.classList.toggle("hover");
+//     });
+// })
+// myButton.forEach(button => {
+//     button.addEventListener("mouseout", event => {
+//         event.target.classList.toggle("hover");
+//     });
+// })
+// myButton.forEach(button => {
+//     button.addEventListener("click", event => {
+//        if(event.target.classList.contains("disabled")){
+//             event.target.textContent = "❤️";
+//        }else{
+//         event.target.classList.replace("enabled","disabled");
+//        }
+//     });
+// })
+
+
+/*-----------------------------------ClassList------------------------------------------*/
+// Calback Hell = Situation in javascript where callbacks
+//                are nested within other callbacks to the 
+//                degree  where the code is difficult to read.
+//                old pattern to handle asynchronous functions. 
+//                use promises + async/await to avoid Callback hell
+
+function taks1(callback){
+    setTimeout(() => {
+        console.log("Taks 1 Complate!");
+        callback();
+    }, 3000);
+}
+function taks2(callback){
+    setTimeout(() => {
+        console.log("Taks 2 Complate!");
+        callback();
+    }, 1000);
+}function taks3(callback){
+    setTimeout(() => {
+        console.log("Taks 3 Complate!");
+        callback();
+    }, 2000);
+}function taks4(callback){
+    setTimeout(() => {
+        console.log("Taks 4 Complate!");
+        callback();
+    },1500);
+}
+
+taks1(() => {
+    taks2(() => {
+        taks3(() => {
+            taks4(() => {
+                console.log("All taks complate");
+            });
+        });
+    });
 });
 
-
-myButton.forEach(button => {
-    button.addEventListener("mouseover", event => {
-        event.target.classList.toggle("hover");
-    });
-})
-myButton.forEach(button => {
-    button.addEventListener("mouseout", event => {
-        event.target.classList.toggle("hover");
-    });
-})
-myButton.forEach(button => {
-    button.addEventListener("click", event => {
-       if(event.target.classList.contains("disabled")){
-            event.target.textContent += "❤️";
-       }else{
-        event.target.classList.replace("enabled","disabled");
-       }
-    });
-})
-
-
+// taks1();
+// taks2();
+// taks3();
+// taks4();
+// console.log("All taks complate!")
