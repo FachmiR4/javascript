@@ -146,3 +146,58 @@ taks1(() => {
 // taks3();
 // taks4();
 // console.log("All taks complate!")
+
+/*-----------------------------------ClassList------------------------------------------*/
+// Promise = An object that manages asynchronous operation.
+//           Wrap a Promise Object around {asynchronous code}
+//           "i promise to return a value"
+//           PENDING -> RESOLVED or REJECTED
+//           new Promise((resolve or reject) => {asyncronous code})
+
+// DO THESE CHORES IN ORDER
+
+// 1. WALK THE DOG
+// 2. CLEAN THE KITCHEN 
+// 3. TAKE OUT THE TRASH
+
+function walkTheDog(){
+   return new Promise((resolve, reject)=> {
+        const walkDog = true;
+        if(walkDog){
+            setTimeout(() => {
+                resolve("You walk the dog! 🐕");
+            }, 3000);
+        }else{
+            reject("You Didn't walk teh dog");
+        }
+   });
+}
+function cleanTheKitchen(){
+    return new Promise((resolve, reject)=> {
+        const cleanKitchen = true;
+        if(cleanKitchen){
+            setTimeout(() => {
+                resolve("You clean the kitchen! 🧹");
+            }, 2000);
+        }else{
+            reject("You Didn't clean the kitchen");
+        }
+    });
+}
+function takeOutTheTrash(){
+    return new Promise((resolve, reject)=> {
+        const cleanKitchen = false;
+        if(cleanKitchen){
+            setTimeout(() => {
+                resolve("You take out the trash! 🚮");
+            }, 1000);
+        }else{
+            reject("You Didn't take out the trash");
+        }
+    });
+}
+ 
+walkTheDog().then(value => {console.log(value); return cleanTheKitchen()})
+            .then(value => {console.log(value); return takeOutTheTrash()})
+            .then(value => {console.log(value); console.log("All sucsess")})
+            .catch(error => console.error(error));
