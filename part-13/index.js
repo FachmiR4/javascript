@@ -101,45 +101,45 @@
 // })
 
 
-/*-----------------------------------ClassList------------------------------------------*/
+/*-----------------------------------Callback Hell------------------------------------------*/
 // Calback Hell = Situation in javascript where callbacks
 //                are nested within other callbacks to the 
 //                degree  where the code is difficult to read.
 //                old pattern to handle asynchronous functions. 
 //                use promises + async/await to avoid Callback hell
 
-function taks1(callback){
-    setTimeout(() => {
-        console.log("Taks 1 Complate!");
-        callback();
-    }, 3000);
-}
-function taks2(callback){
-    setTimeout(() => {
-        console.log("Taks 2 Complate!");
-        callback();
-    }, 1000);
-}function taks3(callback){
-    setTimeout(() => {
-        console.log("Taks 3 Complate!");
-        callback();
-    }, 2000);
-}function taks4(callback){
-    setTimeout(() => {
-        console.log("Taks 4 Complate!");
-        callback();
-    },1500);
-}
+// function taks1(callback){
+//     setTimeout(() => {
+//         console.log("Taks 1 Complate!");
+//         callback();
+//     }, 3000);
+// }
+// function taks2(callback){
+//     setTimeout(() => {
+//         console.log("Taks 2 Complate!");
+//         callback();
+//     }, 1000);
+// }function taks3(callback){
+//     setTimeout(() => {
+//         console.log("Taks 3 Complate!");
+//         callback();
+//     }, 2000);
+// }function taks4(callback){
+//     setTimeout(() => {
+//         console.log("Taks 4 Complate!");
+//         callback();
+//     },1500);
+// }
 
-taks1(() => {
-    taks2(() => {
-        taks3(() => {
-            taks4(() => {
-                console.log("All taks complate");
-            });
-        });
-    });
-});
+// taks1(() => {
+//     taks2(() => {
+//         taks3(() => {
+//             taks4(() => {
+//                 console.log("All taks complate");
+//             });
+//         });
+//     });
+// });
 
 // taks1();
 // taks2();
@@ -147,7 +147,7 @@ taks1(() => {
 // taks4();
 // console.log("All taks complate!")
 
-/*-----------------------------------ClassList------------------------------------------*/
+/*-----------------------------------Promise------------------------------------------*/
 // Promise = An object that manages asynchronous operation.
 //           Wrap a Promise Object around {asynchronous code}
 //           "i promise to return a value"
@@ -160,44 +160,107 @@ taks1(() => {
 // 2. CLEAN THE KITCHEN 
 // 3. TAKE OUT THE TRASH
 
-function walkTheDog(){
-   return new Promise((resolve, reject)=> {
-        const walkDog = true;
-        if(walkDog){
-            setTimeout(() => {
-                resolve("You walk the dog! 🐕");
-            }, 3000);
-        }else{
-            reject("You Didn't walk teh dog");
-        }
-   });
-}
-function cleanTheKitchen(){
-    return new Promise((resolve, reject)=> {
-        const cleanKitchen = true;
-        if(cleanKitchen){
-            setTimeout(() => {
-                resolve("You clean the kitchen! 🧹");
-            }, 2000);
-        }else{
-            reject("You Didn't clean the kitchen");
-        }
-    });
-}
-function takeOutTheTrash(){
-    return new Promise((resolve, reject)=> {
-        const cleanKitchen = false;
-        if(cleanKitchen){
-            setTimeout(() => {
-                resolve("You take out the trash! 🚮");
-            }, 1000);
-        }else{
-            reject("You Didn't take out the trash");
-        }
-    });
-}
+// function walkTheDog(){
+//    return new Promise((resolve, reject)=> {
+//         const walkDog = true;
+//         if(walkDog){
+//             setTimeout(() => {
+//                 resolve("You walk the dog! 🐕");
+//             }, 3000);
+//         }else{
+//             reject("You Didn't walk teh dog");
+//         }
+//    });
+// }
+// function cleanTheKitchen(){
+//     return new Promise((resolve, reject)=> {
+//         const cleanKitchen = true;
+//         if(cleanKitchen){
+//             setTimeout(() => {
+//                 resolve("You clean the kitchen! 🧹");
+//             }, 2000);
+//         }else{
+//             reject("You Didn't clean the kitchen");
+//         }
+//     });
+// }
+// function takeOutTheTrash(){
+//     return new Promise((resolve, reject)=> {
+//         const cleanKitchen = false;
+//         if(cleanKitchen){
+//             setTimeout(() => {
+//                 resolve("You take out the trash! 🚮");
+//             }, 1000);
+//         }else{
+//             reject("You Didn't take out the trash");
+//         }
+//     });
+// }
  
-walkTheDog().then(value => {console.log(value); return cleanTheKitchen()})
-            .then(value => {console.log(value); return takeOutTheTrash()})
-            .then(value => {console.log(value); console.log("All sucsess")})
-            .catch(error => console.error(error));
+// walkTheDog().then(value => {console.log(value); return cleanTheKitchen()})
+//             .then(value => {console.log(value); return takeOutTheTrash()})
+//             .then(value => {console.log(value); console.log("All sucsess")})
+//             .catch(error => console.error(error));
+
+
+/*-----------------------------------Async/Await------------------------------------------*/
+// Async/Await = Async = makes a function return a promise
+//               Await = makes an async function wait for promise
+
+//               Allows you write asynchronous code in a synchronous manner
+//               Async doesn't have resolve or reject parameters
+//               everything after Await is placed is placed in an event queue 
+
+
+function walkTheDog(){
+    return new Promise((resolve, reject)=> {
+         const walkDog = true;
+         if(walkDog){
+             setTimeout(() => {
+                 resolve("You walk the dog! 🐕");
+             }, 3000);
+         }else{
+             reject("You Didn't walk teh dog");
+         }
+    });
+ }
+ function cleanTheKitchen(){
+     return new Promise((resolve, reject)=> {
+         const cleanKitchen = true;
+         if(cleanKitchen){
+             setTimeout(() => {
+                 resolve("You clean the kitchen! 🧹");
+             }, 2000);
+         }else{
+             reject("You Didn't clean the kitchen");
+         }
+     });
+ }
+ function takeOutTheTrash(){
+     return new Promise((resolve, reject)=> {
+         const cleanKitchen = false;
+         if(cleanKitchen){
+             setTimeout(() => {
+                 resolve("You take out the trash! 🚮");
+             }, 1000);
+         }else{
+             reject("You Didn't take out the trash");
+         }
+     });
+ }
+
+async function doChores(){
+    try{
+        const walkDogResult = await walkTheDog();
+        console.log(walkDogResult);
+        const cleanKitchenResult = await cleanTheKitchen();
+        console.log(cleanKitchenResult);
+        const takeOutResult = await takeOutTheTrash();
+        console.log(takeOutResult);
+    }
+    catch(error){
+        console.error(error);
+    }
+}
+
+doChores();
